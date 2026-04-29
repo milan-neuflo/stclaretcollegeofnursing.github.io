@@ -295,9 +295,9 @@ const faqs = [
               <!-- MSc: Grid of specialisations -->
               <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {course.curriculum[0].subjects.map((spec, i) => (
-                  <div class="bg-white border border-blue-border rounded-lg p-6 flex items-start gap-4 hover:border-gold transition-colors">
-                    <div class="bg-gold/15 rounded-lg w-10 h-10 flex items-center justify-center flex-shrink-0">
-                      <span class="font-newsreader font-bold text-gold-dark text-sm">{String(i + 1).padStart(2, '0')}</span>
+                  <div class="bg-white border-2 border-blue-border rounded-lg p-6 flex items-start gap-4 hover:border-gold hover:shadow-md transition-all">
+                    <div class="bg-gold rounded-lg w-10 h-10 flex items-center justify-center flex-shrink-0 shadow-sm">
+                      <span class="font-newsreader font-bold text-navy text-sm">{String(i + 1).padStart(2, '0')}</span>
                     </div>
                     <div class="flex-1">
                       <h4 class="font-newsreader italic text-lg text-navy">{spec}</h4>
