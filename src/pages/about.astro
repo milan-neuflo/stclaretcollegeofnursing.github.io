@@ -173,33 +173,35 @@ const milestones = [
     </div>
   </section>
 
-  <!-- ============ PRINCIPAL'S MESSAGE ============ -->
-  <section class="bg-blue-bg px-8 py-24">
-    <div class="max-w-container mx-auto">
-      <div class="text-center mb-16 flex flex-col items-center gap-4">
-        <span class="font-work-sans font-semibold text-navy text-sm uppercase tracking-[2.8px]">Leadership</span>
-        <h2 class="font-newsreader italic text-5xl text-navy">From the Principal's Desk</h2>
-      </div>
-
-      {leaders.map((leader) => (
-        <div class="max-w-4xl mx-auto bg-white rounded-lg overflow-hidden shadow-lg flex flex-col md:flex-row">
-          <div class="md:w-2/5 aspect-[3/4] md:aspect-auto overflow-hidden">
-            <img
-              src={leader.image}
-              alt={leader.name}
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="md:w-3/5 p-10 flex flex-col justify-center gap-4">
-            <span class="font-work-sans font-semibold text-gold-dark text-xs uppercase tracking-widest">{leader.role}</span>
-            <h3 class="font-newsreader italic text-3xl text-navy">{leader.name}</h3>
-            <div class="w-12 h-px bg-gold my-2"></div>
-            <p class="text-text-secondary text-base leading-relaxed">{leader.bio}</p>
-          </div>
+  {/* PRINCIPAL'S MESSAGE — hidden; flip `false` to `true` to restore */}
+  {false && (
+    <section class="bg-blue-bg px-8 py-24">
+      <div class="max-w-container mx-auto">
+        <div class="text-center mb-16 flex flex-col items-center gap-4">
+          <span class="font-work-sans font-semibold text-navy text-sm uppercase tracking-[2.8px]">Leadership</span>
+          <h2 class="font-newsreader italic text-5xl text-navy">From the Principal's Desk</h2>
         </div>
-      ))}
-    </div>
-  </section>
+
+        {leaders.map((leader) => (
+          <div class="max-w-4xl mx-auto bg-white rounded-lg overflow-hidden shadow-lg flex flex-col md:flex-row">
+            <div class="md:w-2/5 aspect-[3/4] md:aspect-auto overflow-hidden">
+              <img
+                src={leader.image}
+                alt={leader.name}
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="md:w-3/5 p-10 flex flex-col justify-center gap-4">
+              <span class="font-work-sans font-semibold text-gold-dark text-xs uppercase tracking-widest">{leader.role}</span>
+              <h3 class="font-newsreader italic text-3xl text-navy">{leader.name}</h3>
+              <div class="w-12 h-px bg-gold my-2"></div>
+              <p class="text-text-secondary text-base leading-relaxed">{leader.bio}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
 
   {/* Rank Holders & Distinction Students — hidden for now */}
 
