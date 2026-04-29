@@ -4,9 +4,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        navy: '#D4AF37',
-        gold: '#001F3F',
-        'gold-dark': '#FDF6E3',
+        navy: '#001F3F',
+        gold: '#D4AF37',
+        'gold-dark': '#5C4A0F',
         'light-bg': '#FDF6E3',
         'blue-bg': '#FBF6E3',
         'blue-light': '#F0E5AC',
