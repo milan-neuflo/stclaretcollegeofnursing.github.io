@@ -1,0 +1,423 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const courses = [
+  {
+    id: 'bsc',
+    name: 'B.Sc Nursing',
+    duration: '4 Years',
+    type: 'Undergraduate Degree',
+    description: 'A comprehensive undergraduate program that provides foundational and advanced nursing expertise, preparing students for diverse clinical and leadership roles in healthcare.',
+    eligibility: [
+      'Passed 10+2 with Physics, Chemistry, and Biology',
+      'Minimum 45% aggregate (40% for reserved categories)',
+      'Age: 17 years as on 31st December of the admission year',
+      'Female candidates only',
+    ],
+    highlights: ['INC Approved', 'RGUHS Affiliated', 'Clinical Internship', 'Hospital Placements'],
+    structure: 'semester',
+    curriculum: [
+      {
+        period: 'Semester I',
+        subjects: [
+          'Communicative English',
+          'Applied Anatomy & Applied Physiology',
+          'Applied Sociology & Applied Psychology',
+          'Nursing Foundation I',
+        ],
+      },
+      {
+        period: 'Semester II',
+        subjects: [
+          'Applied Biochemistry and Applied Nutrition & Dietetics',
+          'Nursing Foundation II',
+          'Health / Nursing Informatics & Technology',
+        ],
+      },
+      {
+        period: 'Semester III',
+        subjects: [
+          'Applied Microbiology and Infection Control including Safety',
+          'Pharmacology I and Pathology I',
+          'Adult Health Nursing I',
+        ],
+      },
+      {
+        period: 'Semester IV',
+        subjects: [
+          'Pharmacology & Pathology (I & II) & Genetics',
+          'Adult Health Nursing II',
+          'Professionalism, Ethics & Professional Values',
+        ],
+      },
+      {
+        period: 'Semester V',
+        subjects: [
+          'Child Health Nursing I',
+          'Mental Health Nursing I',
+          'Community Health Nursing I (including Environmental Science & Epidemiology)',
+          'Educational Technology / Nursing Education',
+          'Introduction to Forensic Nursing and Indian Laws',
+        ],
+      },
+      {
+        period: 'Semester VI',
+        subjects: [
+          'Child Health Nursing II',
+          'Mental Health Nursing II',
+          'Nursing Management & Leadership',
+          'Midwifery / Obstetrics and Gynecology I',
+        ],
+      },
+      {
+        period: 'Semester VII',
+        subjects: [
+          'Community Health Nursing II',
+          'Midwifery / Obstetrics and Gynecology II',
+          'Nursing Research & Statistics',
+        ],
+      },
+      {
+        period: 'Semester VIII',
+        subjects: [
+          'Internship (Integrated Clinical Practice)',
+          'Professional Project & Dissertation',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'gnm',
+    name: 'GNM Nursing',
+    duration: '3 Years',
+    type: 'Diploma Program',
+    description: 'A practice-focused diploma program in General Nursing and Midwifery, equipping students with hands-on clinical skills for immediate entry into the healthcare workforce. Structured into 3 years with integrated internship.',
+    eligibility: [
+      'Passed 10+2 with Science stream (PCB preferred)',
+      'Minimum 40% aggregate marks',
+      'Age: 17–35 years',
+      'Female candidates only',
+    ],
+    highlights: ['INC Approved', 'Practical Focused', 'Midwifery Training', 'Career Ready'],
+    structure: 'year',
+    curriculum: [
+      {
+        period: '1st Year',
+        subjects: [
+          'Bio-Sciences: Anatomy, Physiology & Microbiology',
+          'Behavioral Sciences: Psychology & Sociology',
+          'Nursing Foundations',
+          'Community Health Nursing I',
+          'English and Computer Education',
+        ],
+      },
+      {
+        period: '2nd Year',
+        subjects: [
+          'Medical Surgical Nursing I',
+          'Medical Surgical Nursing II',
+          'Mental Health Nursing',
+          'Child Health Nursing',
+        ],
+      },
+      {
+        period: '3rd Year',
+        subjects: [
+          'Midwifery and Gynaecological Nursing',
+          'Community Health Nursing II',
+          'Pediatric Nursing',
+          'Internship / Professional Trends',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'pbbsc',
+    name: 'Post Basic B.Sc Nursing',
+    duration: '2 Years',
+    type: 'Degree Program',
+    description: 'A 2-year degree program designed for registered GNM nurses to upgrade their qualification to a B.Sc level, expanding their knowledge in advanced nursing, education, and administration.',
+    eligibility: [
+      'Diploma in General Nursing & Midwifery (GNM)',
+      'Registered Nurse & Midwife (RNRM) with a State Nursing Council',
+      'Minimum 1 year of clinical experience preferred',
+      'Female candidates only',
+    ],
+    highlights: ['INC Approved', 'For GNM Graduates', 'Career Advancement', 'Leadership Focus'],
+    structure: 'year',
+    curriculum: [
+      {
+        period: '1st Year',
+        subjects: [
+          'Nursing Foundation',
+          'Nutrition & Dietetics',
+          'Biochemistry & Biophysics',
+          'Psychology',
+          'Maternal Nursing',
+          'Child Health Nursing',
+          'Microbiology',
+          'Medical & Surgical Nursing',
+        ],
+      },
+      {
+        period: '2nd Year',
+        subjects: [
+          'Sociology',
+          'Community Health Nursing',
+          'Mental Health Nursing',
+          'Introduction to Nursing Education',
+          'Introduction to Nursing Administration',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'msc',
+    name: 'M.Sc Nursing',
+    duration: '2 Years',
+    type: 'Postgraduate Degree',
+    description: 'A postgraduate program offering specialisation in key areas of nursing, preparing graduates for advanced clinical practice, teaching, research, and leadership roles.',
+    eligibility: [
+      'B.Sc Nursing / Post Basic B.Sc Nursing from an INC-recognized institution',
+      'Minimum 55% aggregate marks',
+      'Registered Nurse with a State Nursing Council',
+      '1 year of clinical experience preferred',
+    ],
+    highlights: ['INC Approved', '5 Specialisations', 'Research Focused', 'Dissertation'],
+    structure: 'specialisations',
+    curriculum: [
+      {
+        period: 'Specialisations Offered',
+        subjects: [
+          'Medical-Surgical Nursing',
+          'Paediatric Nursing',
+          'Psychiatric Nursing',
+          'Obstetrics & Gynaecological Nursing',
+          'Community Health Nursing',
+        ],
+      },
+    ],
+  },
+];
+
+const faqs = [
+  { q: 'When do admissions open?', a: 'Admissions typically open in May each year. Early applications are encouraged as seats are limited. Contact our admissions office for specific dates for the 2026 session.' },
+  { q: 'Is hostel accommodation available?', a: 'Yes, we provide fully furnished hostel accommodation with 24/7 security, mess facilities, and recreational areas exclusively for our female students.' },
+  { q: 'What are the clinical training facilities?', a: 'Students train at affiliated multi-specialty hospitals including Manipal Hospitals, Apollo Hospitals, and Fortis Hospital, gaining exposure to all major clinical departments.' },
+  { q: 'Are scholarships available?', a: 'We offer merit-based scholarships and government scholarship facilitation for SC/ST/OBC categories. Financial aid options are discussed during the admission counseling process.' },
+  { q: 'What is the placement record?', a: 'We maintain a 98% placement rate with graduates placed in top hospitals across Bangalore, India, and internationally in countries like UAE, Singapore, and the UK.' },
+];
+---
+
+<BaseLayout title="Courses | St. Claret College of Nursing" activeNav="Courses">
+
+  <!-- ============ HERO ============ -->
+  <section class="relative py-32 overflow-hidden">
+    <img
+      src={`${base}/images/figma/job-05030.jpg`}
+      alt="Academic setting"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-navy/90"></div>
+    <div class="relative max-w-container mx-auto px-8 text-center flex flex-col items-center gap-6">
+      <span class="font-work-sans font-semibold text-gold text-sm uppercase tracking-[2.8px]">Academic Programs</span>
+      <h1 class="font-newsreader italic text-5xl md:text-7xl text-white leading-tight">
+        Your Pathway to a<br />Nursing Career
+      </h1>
+      <p class="text-[#FBF6E3] text-xl max-w-2xl leading-relaxed">
+        Choose from our INC-approved programs designed to prepare you for clinical excellence and leadership in healthcare.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ PROGRAM QUICK NAV ============ -->
+  <section class="bg-white border-b border-gray-200 sticky top-20 z-40">
+    <div class="max-w-container mx-auto px-8 py-4 flex items-center gap-3 overflow-x-auto">
+      {courses.map((c) => (
+        <a
+          href={`#${c.id}`}
+          class="font-work-sans font-semibold text-sm px-5 py-2 rounded-full whitespace-nowrap transition-colors bg-gray-100 text-text-secondary hover:bg-navy hover:text-white"
+        >
+          {c.name}
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- ============ COURSE CATALOG ============ -->
+  <section class="bg-light-bg px-8 py-24">
+    <div class="max-w-container mx-auto flex flex-col gap-32">
+      {courses.map((course, idx) => (
+        <div id={course.id} class="scroll-mt-40">
+          <!-- Course Header -->
+          <div class="flex flex-col lg:flex-row gap-8 mb-10 items-start lg:items-center">
+            <div class="flex-1 flex flex-col gap-4">
+              <div class="flex items-center gap-3 flex-wrap">
+                <span class="bg-gold text-gold-dark font-work-sans font-semibold text-xs uppercase tracking-wider px-3 py-1 rounded-full">
+                  {course.type}
+                </span>
+                <span class="bg-navy/10 text-navy font-work-sans font-semibold text-xs uppercase tracking-wider px-3 py-1 rounded-full">
+                  {course.duration}
+                </span>
+              </div>
+              <h2 class="font-newsreader italic text-5xl text-navy">{course.name}</h2>
+              <p class="text-text-secondary text-lg leading-relaxed max-w-3xl">{course.description}</p>
+            </div>
+            <a
+              href={`${base}/contact`}
+              class="bg-navy text-white font-work-sans font-semibold text-base px-8 py-4 rounded-md hover:bg-navy/90 transition-colors whitespace-nowrap"
+            >
+              Apply Now
+            </a>
+          </div>
+
+          <!-- Highlights -->
+          <div class="flex flex-wrap gap-3 mb-10">
+            {course.highlights.map((h) => (
+              <div class="bg-white border border-blue-border rounded-md px-4 py-2 flex items-center gap-2">
+                <svg class="w-4 h-4 text-gold" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span class="font-work-sans font-semibold text-navy text-sm">{h}</span>
+              </div>
+            ))}
+          </div>
+
+          <!-- Curriculum Section -->
+          <div class="flex flex-col gap-6">
+            <div class="flex items-center gap-4">
+              <h3 class="font-work-sans font-semibold text-navy text-sm uppercase tracking-[2.8px]">
+                {course.structure === 'specialisations' ? 'Specialisations' : 'Curriculum'}
+              </h3>
+              <div class="flex-1 h-px bg-gray-300/50"></div>
+            </div>
+
+            {course.structure === 'specialisations' ? (
+              <!-- MSc: Grid of specialisations -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {course.curriculum[0].subjects.map((spec, i) => (
+                  <div class="bg-white border border-blue-border rounded-lg p-6 flex items-start gap-4 hover:border-gold transition-colors">
+                    <div class="bg-gold/15 rounded-lg w-10 h-10 flex items-center justify-center flex-shrink-0">
+                      <span class="font-newsreader font-bold text-gold-dark text-sm">{String(i + 1).padStart(2, '0')}</span>
+                    </div>
+                    <div class="flex-1">
+                      <h4 class="font-newsreader italic text-lg text-navy">{spec}</h4>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <!-- Semester/Year grid -->
+              <div class:list={[
+                'grid gap-4',
+                course.structure === 'semester' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-2' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
+              ]}>
+                {course.curriculum.map((term, i) => (
+                  <div class="bg-white rounded-lg p-6 border border-blue-border hover:shadow-md transition-shadow">
+                    <div class="flex items-center justify-between mb-4 pb-3 border-b border-gray-100">
+                      <h4 class="font-newsreader italic text-2xl text-navy">{term.period}</h4>
+                      <span class="bg-navy text-white font-work-sans font-semibold text-xs px-3 py-1 rounded-full">
+                        {term.subjects.length} {term.subjects.length === 1 ? 'Module' : 'Modules'}
+                      </span>
+                    </div>
+                    <ul class="flex flex-col gap-3">
+                      {term.subjects.map((subject, j) => (
+                        <li class="flex items-start gap-3">
+                          <span class="font-work-sans font-semibold text-gold-dark text-xs w-6 flex-shrink-0 pt-1">{String(j + 1).padStart(2, '0')}</span>
+                          <span class="text-text-secondary text-sm leading-relaxed">{subject}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <!-- Eligibility -->
+          <div class="mt-12 bg-white border border-blue-border rounded-lg p-8">
+            <h3 class="font-work-sans font-semibold text-navy text-sm uppercase tracking-[2.8px] mb-6">Eligibility Criteria</h3>
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {course.eligibility.map((e) => (
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                  <span class="text-text-secondary text-base">{e}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ============ ADMISSION PROCESS ============ -->
+  <section class="bg-white px-8 py-24">
+    <div class="max-w-container mx-auto">
+      <div class="text-center mb-16 flex flex-col items-center gap-4">
+        <span class="font-work-sans font-semibold text-navy text-sm uppercase tracking-[2.8px]">How to Apply</span>
+        <h2 class="font-newsreader italic text-5xl text-navy">Admission Process</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        {[
+          { step: '01', title: 'Inquire', desc: 'Fill out the inquiry form or contact our admissions office for program details.' },
+          { step: '02', title: 'Apply', desc: 'Submit your application with required documents and application fee.' },
+          { step: '03', title: 'Counseling', desc: 'Attend the admission counseling session with your parent or guardian.' },
+          { step: '04', title: 'Enroll', desc: 'Complete fee payment and documentation to secure your seat.' },
+        ].map((item) => (
+          <div class="flex flex-col gap-4 text-center">
+            <div class="mx-auto bg-gold/10 rounded-full w-20 h-20 flex items-center justify-center">
+              <span class="font-newsreader text-3xl font-bold text-gold">{item.step}</span>
+            </div>
+            <h3 class="font-newsreader italic text-xl text-navy">{item.title}</h3>
+            <p class="text-text-secondary text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="bg-blue-bg px-8 py-24">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-16 flex flex-col items-center gap-4">
+        <span class="font-work-sans font-semibold text-navy text-sm uppercase tracking-[2.8px]">FAQ</span>
+        <h2 class="font-newsreader italic text-5xl text-navy">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        {faqs.map((faq, i) => (
+          <details class="bg-white rounded-lg shadow-sm group" open={i === 0}>
+            <summary class="cursor-pointer px-8 py-6 flex items-center justify-between font-newsreader italic text-xl text-navy list-none">
+              {faq.q}
+              <svg class="w-5 h-5 text-text-muted flex-shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="px-8 pb-6">
+              <p class="text-text-secondary text-base leading-relaxed">{faq.a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="relative py-20 overflow-hidden">
+    <div class="absolute inset-0 bg-[rgba(0,31,63,0.95)]"></div>
+    <div class="relative max-w-5xl mx-auto text-center flex flex-col items-center gap-8 px-8">
+      <h2 class="font-newsreader italic text-5xl text-white">Ready to Begin Your Journey?</h2>
+      <p class="text-text-muted text-xl max-w-2xl leading-relaxed">
+        Applications for the 2026 Academic Session are now open. Limited seats available.
+      </p>
+      <div class="flex flex-wrap justify-center gap-6">
+        <a href={`${base}/contact`} class="bg-gold text-gold-dark font-work-sans font-semibold text-lg px-10 py-5 rounded-md hover:bg-yellow-400 transition-colors">
+          Apply for Admission
+        </a>
+        <a href="#" class="bg-white text-navy font-work-sans font-semibold text-lg px-10 py-5 rounded-md hover:bg-gray-100 transition-colors">
+          Download Brochure
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

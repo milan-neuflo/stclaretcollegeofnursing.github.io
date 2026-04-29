@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const photos = [
+  { src: `${base}/images/figma/job-03773.jpg`, alt: 'Students in classroom', span: 'col-span-2 row-span-2' },
+  { src: `${base}/images/figma/job-05018.jpg`, alt: 'Simulation lab', span: '' },
+  { src: `${base}/images/figma/job-05142.jpg`, alt: 'Practical training', span: '' },
+  { src: `${base}/images/figma/job-04966.jpg`, alt: 'Clinical session', span: '' },
+  { src: `${base}/images/figma/job-05030.jpg`, alt: 'Campus event', span: 'col-span-2' },
+  { src: `${base}/images/figma/job-04250.jpg`, alt: 'Campus view', span: '' },
+  { src: `${base}/images/figma/job-04910.jpg`, alt: 'Graduation ceremony', span: '' },
+  { src: `${base}/images/figma/job-04372.jpg`, alt: 'Hospital placement', span: '' },
+  { src: `${base}/images/figma/job-04866.jpg`, alt: 'Library', span: '' },
+  { src: `${base}/images/figma/job-05015.jpg`, alt: 'Anatomy lab', span: 'col-span-2' },
+  { src: `${base}/images/figma/job-04561.jpg`, alt: 'Computer lab', span: '' },
+  { src: `${base}/images/figma/job-04897.jpg`, alt: 'Seminar hall', span: '' },
+];
+---
+
+<BaseLayout title="Gallery | St. Claret College of Nursing" activeNav="Gallery">
+
+  <!-- ============ HERO ============ -->
+  <section class="relative py-32 overflow-hidden">
+    <img
+      src={`${base}/images/figma/job-04250.jpg`}
+      alt="Gallery"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-navy/90"></div>
+    <div class="relative max-w-container mx-auto px-8 text-center flex flex-col items-center gap-6">
+      <span class="font-work-sans font-semibold text-gold text-sm uppercase tracking-[2.8px]">Campus Life</span>
+      <h1 class="font-newsreader italic text-5xl md:text-7xl text-white leading-tight">
+        Our Gallery
+      </h1>
+      <p class="text-[#FBF6E3] text-xl max-w-2xl leading-relaxed">
+        Explore the vibrant life at St. Claret College of Nursing through our photo gallery.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ PHOTO GRID ============ -->
+  <section class="bg-light-bg px-8 py-16">
+    <div class="max-w-container mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[250px]">
+        {photos.map((photo) => (
+          <div class:list={['rounded-lg overflow-hidden shadow-md group cursor-pointer', photo.span]}>
+            <img
+              src={photo.src}
+              alt={photo.alt}
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VIDEO SECTION ============ -->
+  <section class="bg-navy px-8 py-24">
+    <div class="max-w-container mx-auto text-center flex flex-col items-center gap-8">
+      <span class="font-work-sans font-semibold text-gold text-sm uppercase tracking-[2.8px]">Virtual Tour</span>
+      <h2 class="font-newsreader italic text-5xl text-white">Take a Virtual Campus Tour</h2>
+      <p class="text-slate-400 text-lg max-w-xl">
+        Can't visit in person? Experience our campus through our virtual tour video.
+      </p>
+      <div class="w-full max-w-3xl aspect-video bg-white/10 rounded-lg flex items-center justify-center border border-white/20">
+        <div class="flex flex-col items-center gap-4">
+          <div class="w-20 h-20 rounded-full bg-gold/20 flex items-center justify-center">
+            <svg class="w-8 h-8 text-gold ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <span class="text-white/60 text-sm font-work-sans">Video coming soon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="bg-blue-bg px-8 py-20">
+    <div class="max-w-5xl mx-auto text-center flex flex-col items-center gap-8">
+      <h2 class="font-newsreader italic text-4xl text-navy">Want to See It in Person?</h2>
+      <p class="text-text-secondary text-lg max-w-xl">
+        Nothing beats an in-person experience. Schedule a campus visit today.
+      </p>
+      <a href={`${base}/contact`} class="bg-navy text-white font-work-sans font-semibold text-lg px-10 py-5 rounded-md hover:bg-navy/90 transition-colors">
+        Schedule a Visit
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

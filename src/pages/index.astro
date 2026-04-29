@@ -1,0 +1,302 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout title="St. Claret College of Nursing | Excellence in Healthcare Education" activeNav="Home">
+
+  <!-- ============ HERO SECTION ============ -->
+  <section class="relative min-h-[90vh] flex items-center overflow-hidden">
+    <!-- Background Image -->
+    <img
+      src={`${base}/images/figma/job-04250.jpg`}
+      alt="Nursing students"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-[rgba(0,31,63,0.95)] via-[rgba(0,31,63,0.4)] to-transparent"></div>
+
+    <div class="relative max-w-container mx-auto px-8 md:px-14 grid grid-cols-1 md:grid-cols-2 gap-12 w-full">
+      <div class="flex flex-col gap-8 justify-center py-20">
+        <!-- Badge -->
+        <div class="inline-flex self-start">
+          <span class="bg-gold text-gold-dark font-work-sans font-semibold text-sm uppercase tracking-wider px-4 py-1.5 rounded-xl">
+            Accredited Leadership in Nursing
+          </span>
+        </div>
+
+        <!-- Heading -->
+        <h1 class="font-newsreader text-6xl md:text-8xl lg:text-[96px] leading-none text-white">
+          <span class="italic">Excellence in</span><br />
+          <span class="font-bold text-gold">Healthcare</span><br />
+          <span class="italic">Education.</span>
+        </h1>
+
+        <!-- Subheading -->
+        <p class="text-[#FBF6E3] text-xl leading-relaxed max-w-xl">
+          Empowering students to become compassionate, skilled, and visionary nursing professionals in the heart of Bangalore's medical hub.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap gap-4">
+          <a
+            href={`${base}/contact`}
+            class="bg-gold text-gold-dark font-work-sans font-semibold text-lg px-8 py-4 rounded-md hover:bg-yellow-400 transition-colors"
+          >
+            Apply for Admission
+          </a>
+          <a
+            href={`${base}/courses`}
+            class="backdrop-blur-md bg-white/10 border border-white/20 text-white font-work-sans font-semibold text-lg px-8 py-4 rounded-md hover:bg-white/20 transition-colors"
+          >
+            Explore Courses
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURE BENTO GRID ============ -->
+  <section class="bg-light-bg px-8 py-24">
+    <div class="max-w-container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <!-- Large Feature: Simulation Labs -->
+      <div class="lg:col-span-8 relative rounded-lg overflow-hidden min-h-[500px] lg:min-h-[600px] group">
+        <img
+          src={`${base}/images/figma/job-04561.jpg`}
+          alt="Clinical simulation lab"
+          class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-10 flex flex-col gap-4">
+          <span class="font-work-sans font-semibold text-gold text-sm uppercase tracking-[1.4px]">Modern Facilities</span>
+          <h3 class="font-newsreader italic text-4xl text-white">World-Class Simulation Labs</h3>
+          <p class="text-white/80 text-base max-w-lg leading-relaxed">
+            Experience hands-on training with cutting-edge medical technology that mirrors real-world clinical environments in India's best hospitals.
+          </p>
+          <a href={`${base}/facilities`} class="flex items-center gap-2 text-white font-bold hover:text-gold transition-colors">
+            Discover Our Campus
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: 2 Small Features -->
+      <div class="lg:col-span-4 flex flex-col gap-6">
+        <!-- Expert Faculty -->
+        <div class="bg-navy rounded-lg p-10 flex flex-col justify-between flex-1 relative overflow-hidden">
+          <div class="absolute -bottom-4 -right-4 w-28 h-24 opacity-20">
+            <svg viewBox="0 0 120 96" fill="none"><circle cx="60" cy="48" r="40" stroke="#D4AF37" stroke-width="2"/></svg>
+          </div>
+          <div class="flex flex-col gap-4">
+            <span class="font-work-sans font-semibold text-gold text-xs uppercase tracking-widest">Global Standards</span>
+            <h3 class="font-newsreader italic text-3xl text-white">Expert Faculty</h3>
+          </div>
+          <p class="text-text-muted text-base leading-relaxed mt-6">
+            Learn from distinguished nursing leaders and clinical specialists with deep roots in South Indian healthcare.
+          </p>
+        </div>
+
+        <!-- Placement Support -->
+        <div class="bg-blue-light rounded-lg p-10 flex flex-col justify-between flex-1">
+          <div class="flex flex-col gap-4">
+            <span class="font-work-sans font-semibold text-navy text-xs uppercase tracking-widest">Career Launchpad</span>
+            <h3 class="font-newsreader italic text-3xl text-navy">Placement Support</h3>
+          </div>
+          <p class="text-text-secondary text-base leading-relaxed mt-6">
+            Strategic partnerships with Bangalore's leading multi-specialty hospitals for guaranteed career paths.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ACADEMIC EXCELLENCE ============ -->
+  <section class="bg-blue-bg px-8 py-24 overflow-hidden">
+    <div class="max-w-container mx-auto flex flex-col lg:flex-row items-center gap-20">
+      <!-- Tilted Photo -->
+      <div class="flex-shrink-0 flex items-center justify-center w-full lg:w-auto">
+        <div class="-rotate-2 bg-white border-[12px] border-white rounded shadow-2xl overflow-hidden max-w-[568px]">
+          <img
+            src={`${base}/images/figma/job-04470.jpg`}
+            alt="Nursing students in classroom"
+            class="w-full h-auto object-cover"
+          />
+        </div>
+      </div>
+
+      <!-- Text Content -->
+      <div class="flex flex-col gap-8 max-w-[568px]">
+        <h2 class="font-newsreader italic text-5xl md:text-6xl text-navy leading-tight">
+          A Legacy of<br />Academic Leadership
+        </h2>
+
+        <div class="flex flex-col gap-6">
+          <p class="text-text-secondary text-lg leading-relaxed">
+            Founded on the principles of compassion and excellence, St. Claret College of Nursing has been at the forefront of healthcare education in Bangalore for over two decades.
+          </p>
+          <p class="text-text-secondary text-lg leading-relaxed">
+            Dedicated exclusively to empowering female students, our curriculum is meticulously designed to exceed INC standards, integrating evidence-based practice with advanced technological proficiency.
+          </p>
+        </div>
+
+        <!-- Placement Partners -->
+        <div class="border-t border-gray-300/30 pt-8 flex flex-col gap-6">
+          <h4 class="font-work-sans font-semibold text-navy text-sm uppercase tracking-[2.8px]">
+            Our Placement Partners
+          </h4>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {['Manipal Hospitals', 'Apollo Hospitals', 'Fortis Hospital', 'Narayana Health', 'Aster CMI Hospital', "St. John's Medical College", 'Manipal Group', 'Sakra World Hospital'].map((partner) => (
+              <div class="bg-white border border-blue-border rounded-sm px-3 py-3 flex items-center justify-center">
+                <span class="font-bold text-text-secondary text-[10px] uppercase tracking-tight text-center">
+                  {partner}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="pt-6">
+          <a href={`${base}/about`} class="flex items-center gap-3 group">
+            <div class="w-12 h-px bg-navy group-hover:w-16 transition-all"></div>
+            <span class="font-bold text-navy text-base">LEARN MORE ABOUT OUR VISION</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COURSES & ADMISSIONS ============ -->
+  <section class="bg-white px-8 py-24">
+    <div class="max-w-container mx-auto flex flex-col gap-16">
+      <!-- Section Header -->
+      <div class="text-center flex flex-col items-center gap-4">
+        <span class="font-work-sans font-semibold text-navy text-sm uppercase tracking-[2.8px]">Our Programs</span>
+        <h2 class="font-newsreader italic text-5xl text-navy">Pathway to Your Medical Career</h2>
+      </div>
+
+      <!-- Course Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          {
+            name: 'B.Sc Nursing',
+            duration: '4 Years',
+            tag: 'Undergraduate',
+            desc: 'Comprehensive undergraduate program providing foundational and advanced nursing expertise.',
+            features: ['4 Year Duration', 'Clinical Internship', 'INC Certified'],
+            anchor: 'bsc',
+          },
+          {
+            name: 'GNM Nursing',
+            duration: '3 Years',
+            tag: 'Diploma',
+            desc: 'Practice-focused diploma in General Nursing and Midwifery for diverse clinical roles.',
+            features: ['3 Year Duration', 'Practical Focused', 'Midwifery Training'],
+            anchor: 'gnm',
+          },
+          {
+            name: 'Post Basic B.Sc',
+            duration: '2 Years',
+            tag: 'Degree',
+            desc: 'Upgrade your GNM qualification to a B.Sc level — designed for registered nurses.',
+            features: ['2 Year Duration', 'For GNM Graduates', 'Career Growth'],
+            anchor: 'pbbsc',
+          },
+          {
+            name: 'M.Sc Nursing',
+            duration: '2 Years',
+            tag: 'Postgraduate',
+            desc: 'Postgraduate specialisation across 5 key nursing areas with research focus.',
+            features: ['5 Specialisations', 'Research Focused', 'Dissertation'],
+            anchor: 'msc',
+          },
+        ].map((course) => (
+          <div class="bg-light-bg rounded-lg p-8 flex flex-col gap-5">
+            <div class="flex items-center justify-between">
+              <span class="bg-gold text-gold-dark font-work-sans font-semibold text-[10px] uppercase tracking-wider px-3 py-1 rounded-full">
+                {course.tag}
+              </span>
+              <span class="font-work-sans font-semibold text-navy text-xs">{course.duration}</span>
+            </div>
+            <h3 class="font-newsreader italic text-2xl text-navy">{course.name}</h3>
+            <p class="text-text-secondary text-sm leading-relaxed">{course.desc}</p>
+            <ul class="flex flex-col gap-2">
+              {course.features.map((item) => (
+                <li class="flex items-center gap-2">
+                  <svg class="w-2 h-2 text-gold flex-shrink-0" viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="currentColor"/></svg>
+                  <span class="font-work-sans text-text-secondary text-xs">{item}</span>
+                </li>
+              ))}
+            </ul>
+            <a
+              href={`${base}/courses#${course.anchor}`}
+              class="mt-auto border border-gray-500 text-navy font-bold text-sm text-center py-3 hover:bg-navy hover:text-white transition-colors"
+            >
+              VIEW CURRICULUM
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ADMISSION CTA ============ -->
+  <section class="relative py-20 overflow-hidden">
+    <div class="absolute inset-0 bg-[rgba(0,31,63,0.95)]"></div>
+    <div class="relative max-w-5xl mx-auto text-center flex flex-col items-center gap-8 px-8">
+      <h2 class="font-newsreader italic text-5xl text-white">Join the Vanguard of Healthcare</h2>
+      <p class="text-text-muted text-xl text-center max-w-2xl leading-relaxed">
+        Applications for the 2026 Academic Session are now open.<br />
+        Secure your future in one of the world's most noble professions.
+      </p>
+      <div class="flex flex-wrap justify-center gap-6 pt-4">
+        <a
+          href="#"
+          class="bg-gold text-gold-dark font-work-sans font-semibold text-lg px-10 py-5 rounded-md hover:bg-yellow-400 transition-colors"
+        >
+          Download Prospectus
+        </a>
+        <a
+          href={`${base}/contact`}
+          class="bg-white text-navy font-work-sans font-semibold text-lg px-10 py-5 rounded-md hover:bg-gray-100 transition-colors"
+        >
+          Inquire Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INSTAGRAM SECTION ============ -->
+  <section class="bg-blue-bg py-24 overflow-hidden">
+    <div class="max-w-container mx-auto px-8">
+      <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 mb-12">
+        <div class="flex flex-col gap-4">
+          <span class="font-work-sans font-semibold text-navy text-sm uppercase tracking-[2.8px]">Follow Us</span>
+          <h2 class="font-newsreader italic text-5xl text-navy">Connect on Instagram</h2>
+        </div>
+        <a href="https://www.instagram.com/bharathinursing" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 font-bold text-navy hover:text-navy/70 transition-colors">
+          @bharathinursing
+          <svg class="w-[18px] h-[18px]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+        {[
+          `${base}/images/figma/job-03773.jpg`,
+          `${base}/images/figma/job-05135.jpg`,
+          `${base}/images/figma/job-05169.jpg`,
+          `${base}/images/figma/job-04966.jpg`,
+          `${base}/images/figma/job-05009.jpg`,
+        ].map((src, i) => (
+          <div class="rounded-lg overflow-hidden shadow-lg aspect-square group">
+            <img
+              src={src}
+              alt={`Instagram post ${i + 1}`}
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

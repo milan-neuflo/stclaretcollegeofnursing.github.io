@@ -1,0 +1,26 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+
+# astro
+.astro/
+
+# environment
+.env
+.env.*
+
+# editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# raw photo source (originals are large; web-optimised copies live in public/images/figma)
+Photos/
+
+# Claude Code workspace
+.claude/

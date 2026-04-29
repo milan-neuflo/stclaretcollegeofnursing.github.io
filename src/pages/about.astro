@@ -1,0 +1,247 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const leaders = [
+  {
+    name: 'Sr. Alicekutty G',
+    role: 'Principal',
+    bio: 'Principal of St. Claret College of Nursing. A distinguished educator with decades of experience in nursing education and academic leadership — committed to nurturing compassionate and skilled healthcare professionals.',
+    image: `${base}/images/figma/sister.jpg`,
+  },
+];
+
+const rankHolders = [
+  {
+    name: 'Student Name 1',
+    rank: '1st Rank',
+    year: 'B.Sc Nursing — 2024',
+    achievement: 'University Topper',
+    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80',
+  },
+  {
+    name: 'Student Name 2',
+    rank: '2nd Rank',
+    year: 'B.Sc Nursing — 2024',
+    achievement: 'Distinction in Medical-Surgical Nursing',
+    image: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?w=400&q=80',
+  },
+  {
+    name: 'Student Name 3',
+    rank: '3rd Rank',
+    year: 'GNM — 2024',
+    achievement: 'Distinction in Community Health Nursing',
+    image: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=400&q=80',
+  },
+  {
+    name: 'Student Name 4',
+    rank: 'Distinction',
+    year: 'B.Sc Nursing — 2023',
+    achievement: 'Excellence in Pediatric Nursing',
+    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80',
+  },
+  {
+    name: 'Student Name 5',
+    rank: 'Distinction',
+    year: 'GNM — 2023',
+    achievement: 'Best Clinical Performance',
+    image: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?w=400&q=80',
+  },
+  {
+    name: 'Student Name 6',
+    rank: 'Distinction',
+    year: 'B.Sc Nursing — 2023',
+    achievement: 'Excellence in Midwifery',
+    image: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=400&q=80',
+  },
+];
+
+const stats = [
+  { value: '25+', label: 'Years of Excellence' },
+  { value: '1000+', label: 'Alumni Network' },
+  { value: '98%', label: 'Placement Rate' },
+  { value: '50+', label: 'Hospital Partners' },
+];
+
+const milestones = [
+  { year: '1998', text: 'First batch of GNM — our journey in nursing education begins' },
+  { year: '2003', text: 'First batch of B.Sc Nursing launched' },
+  { year: '2007', text: 'First batch of M.Sc Nursing introduced' },
+  { year: '2010', text: 'First batch of Post Basic B.Sc Nursing' },
+  { year: '2020', text: 'Established our own Theory and Practical Examination Center' },
+  { year: '2023', text: 'Launched Digital Evaluation Center' },
+  { year: '2023', text: 'Introduced Foreign Language program for students' },
+  { year: '2026', text: 'PhD Center inaugurated — advancing nursing research' },
+];
+---
+
+<BaseLayout title="About Us | St. Claret College of Nursing" activeNav="About">
+
+  <!-- ============ HERO ============ -->
+  <section class="relative py-32 overflow-hidden">
+    <img
+      src={`${base}/images/figma/job-04470.jpg`}
+      alt="Nursing students"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-navy/90"></div>
+    <div class="relative max-w-container mx-auto px-8 text-center flex flex-col items-center gap-6">
+      <span class="font-work-sans font-semibold text-gold text-sm uppercase tracking-[2.8px]">About Us</span>
+      <h1 class="font-newsreader italic text-5xl md:text-7xl text-white leading-tight">
+        Shaping the Future of<br />Healthcare Education
+      </h1>
+      <p class="text-[#FBF6E3] text-xl max-w-2xl leading-relaxed">
+        For over two decades, St. Claret College of Nursing has been nurturing compassionate, skilled, and visionary nursing professionals.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ STATS BAR ============ -->
+  <section class="bg-gold py-12">
+    <div class="max-w-container mx-auto px-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+      {stats.map((stat) => (
+        <div class="text-center">
+          <div class="font-newsreader text-5xl font-bold text-navy">{stat.value}</div>
+          <div class="font-work-sans text-gold-dark text-sm uppercase tracking-wider mt-2">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ============ MISSION & VISION ============ -->
+  <section class="bg-light-bg px-8 py-24">
+    <div class="max-w-container mx-auto flex flex-col lg:flex-row gap-20 items-center">
+      <div class="flex-1 flex flex-col gap-12">
+        <!-- Mission -->
+        <div class="flex flex-col gap-6">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-px bg-gold"></div>
+            <span class="font-work-sans font-semibold text-gold-dark text-sm uppercase tracking-[2.8px]">Our Mission</span>
+          </div>
+          <h2 class="font-newsreader italic text-4xl md:text-5xl text-navy leading-tight">
+            Empowering Women Through Clinical Excellence
+          </h2>
+          <p class="text-text-secondary text-lg leading-relaxed">
+            To provide holistic nursing education that cultivates clinical competence, critical thinking, and compassionate care. We are dedicated to empowering female students with the knowledge and skills to become leaders in healthcare, serving communities across India and beyond.
+          </p>
+        </div>
+
+        <!-- Vision -->
+        <div class="flex flex-col gap-6">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-px bg-navy"></div>
+            <span class="font-work-sans font-semibold text-navy text-sm uppercase tracking-[2.8px]">Our Vision</span>
+          </div>
+          <h2 class="font-newsreader italic text-4xl md:text-5xl text-navy leading-tight">
+            A Global Standard for Nursing Education
+          </h2>
+          <p class="text-text-secondary text-lg leading-relaxed">
+            To be recognized as a center of excellence in nursing education in South Asia, producing graduates who set the benchmark for patient care, clinical research, and healthcare innovation across multi-specialty and community settings.
+          </p>
+        </div>
+      </div>
+
+      <!-- Image -->
+      <div class="flex-shrink-0 w-full lg:w-[480px]">
+        <div class="rounded-lg overflow-hidden shadow-2xl">
+          <img
+            src={`${base}/images/figma/job-05009.jpg`}
+            alt="Nursing classroom"
+            class="w-full h-auto object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TIMELINE / MILESTONES ============ -->
+  <section class="bg-navy px-8 py-24">
+    <div class="max-w-container mx-auto">
+      <div class="text-center mb-16 flex flex-col items-center gap-4">
+        <span class="font-work-sans font-semibold text-gold text-sm uppercase tracking-[2.8px]">Our Journey</span>
+        <h2 class="font-newsreader italic text-5xl text-white">Milestones That Define Us</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {milestones.map((m) => (
+          <div class="border border-white/10 rounded-lg p-8 flex flex-col gap-4 hover:border-gold/40 transition-colors">
+            <span class="font-newsreader text-4xl font-bold text-gold">{m.year}</span>
+            <p class="text-slate-400 text-base leading-relaxed">{m.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRINCIPAL'S MESSAGE ============ -->
+  <section class="bg-blue-bg px-8 py-24">
+    <div class="max-w-container mx-auto">
+      <div class="text-center mb-16 flex flex-col items-center gap-4">
+        <span class="font-work-sans font-semibold text-navy text-sm uppercase tracking-[2.8px]">Leadership</span>
+        <h2 class="font-newsreader italic text-5xl text-navy">From the Principal's Desk</h2>
+      </div>
+
+      {leaders.map((leader) => (
+        <div class="max-w-4xl mx-auto bg-white rounded-lg overflow-hidden shadow-lg flex flex-col md:flex-row">
+          <div class="md:w-2/5 aspect-[3/4] md:aspect-auto overflow-hidden">
+            <img
+              src={leader.image}
+              alt={leader.name}
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="md:w-3/5 p-10 flex flex-col justify-center gap-4">
+            <span class="font-work-sans font-semibold text-gold-dark text-xs uppercase tracking-widest">{leader.role}</span>
+            <h3 class="font-newsreader italic text-3xl text-navy">{leader.name}</h3>
+            <div class="w-12 h-px bg-gold my-2"></div>
+            <p class="text-text-secondary text-base leading-relaxed">{leader.bio}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {/* Rank Holders & Distinction Students — hidden for now */}
+
+  <!-- ============ VALUES ============ -->
+  <section class="bg-blue-bg px-8 py-24">
+    <div class="max-w-container mx-auto">
+      <div class="text-center mb-16 flex flex-col items-center gap-4">
+        <span class="font-work-sans font-semibold text-navy text-sm uppercase tracking-[2.8px]">Core Values</span>
+        <h2 class="font-newsreader italic text-5xl text-navy">What We Stand For</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[
+          { title: 'Compassion', desc: 'We believe nursing is rooted in empathy. Our students learn to treat every patient with dignity, respect, and genuine care.', icon: '❤' },
+          { title: 'Excellence', desc: 'We pursue the highest standards in education, clinical training, and research — preparing graduates who lead, not follow.', icon: '★' },
+          { title: 'Integrity', desc: 'Ethical practice is non-negotiable. We instill a deep commitment to honesty, accountability, and professional responsibility.', icon: '✦' },
+        ].map((value) => (
+          <div class="bg-light-bg rounded-lg p-10 flex flex-col gap-4 text-center">
+            <div class="text-4xl mb-2">{value.icon}</div>
+            <h3 class="font-newsreader italic text-2xl text-navy">{value.title}</h3>
+            <p class="text-text-secondary text-base leading-relaxed">{value.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="relative py-20 overflow-hidden">
+    <div class="absolute inset-0 bg-[rgba(0,31,63,0.95)]"></div>
+    <div class="relative max-w-5xl mx-auto text-center flex flex-col items-center gap-8 px-8">
+      <h2 class="font-newsreader italic text-5xl text-white">Become Part of Our Legacy</h2>
+      <p class="text-text-muted text-xl max-w-2xl leading-relaxed">
+        Join a community of dedicated nursing professionals who are shaping the future of healthcare in India.
+      </p>
+      <a
+        href={`${base}/contact`}
+        class="bg-gold text-gold-dark font-work-sans font-semibold text-lg px-10 py-5 rounded-md hover:bg-yellow-400 transition-colors"
+      >
+        Apply for Admission
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>
